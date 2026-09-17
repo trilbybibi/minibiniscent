@@ -697,18 +697,10 @@
         <div class="section-label" style="color:var(--orange-mid)">Get in Touch · 聯絡我們</div>
         <h2 style="color:white;">有任何問題<br>歡迎找我們</h2>
         <p>無論是產品諮詢、客製化訂單或合作提案，我們都很樂意聽你說。</p>
-        <div class="payment-box">
-          <div class="payment-label">付款方式 Payment Methods</div>
-          <div class="payment-row">
-🏦 中國信託 (822)　戶名：陳詠琦<br>
-　　帳號：565600●●●●780<br>
-💚 LINE Pay　<span class="payment-placeholder">（即將開通）</span><br>
-📦 確認付款後 2–3 個工作天出貨
-          </div>
-        </div>
         <div class="contact-links">
           <a href="#" class="contact-link"><div class="contact-link-icon">@</div>hello@minibiniscent.com</a>
           <a href="#" class="contact-link"><div class="contact-link-icon" style="font-size:0.7rem;">IG</div>@thosewordstoheart</a>
+          <a href="#" class="contact-link"><div class="contact-link-icon" style="font-size:0.65rem;">LINE</div>@你的LINE ID</a>
           <a href="#" class="contact-link"><div class="contact-link-icon">📍</div>Tainan, Taiwan</a>
         </div>
       </div>
@@ -927,13 +919,21 @@
 
   function checkoutOrder() {
     if (cart.length === 0) return;
-    let msg = '您好，我想訂購以下商品：%0A%0A';
+    let text = '您好，我想訂購以下商品：\n\n';
     cart.forEach(item => {
-      msg += `・${item.name} ×${item.qty}　NT$${item.price * item.qty}%0A`;
+      text += `・${item.name} ×${item.qty}　NT$${item.price * item.qty}\n`;
     });
-    msg += `%0A小計：NT$${getSubtotal().toLocaleString()}%0A%0A麻煩協助確認付款方式與出貨時間，謝謝！`;
+    text += `\n小計：NT$${getSubtotal().toLocaleString()}\n\n`;
+    text += '━━━━━━━━━━━━\n';
+    text += '💳 付款方式\n';
+    text += '🏦 中國信託 (822)\n';
+    text += '　戶名：陳詠琦\n';
+    text += '　帳號：565600003780\n';
+    text += '💚 LINE Pay：即將開通\n';
+    text += '━━━━━━━━━━━━\n\n';
+    text += '⚠️ 請完成轉帳後，回傳這則訊息並附上轉帳截圖，我們確認收款後即安排出貨，謝謝！';
     // 開啟 LINE 傳送預先填好的訂單內容
-    window.open('https://line.me/R/msg/text/?' + msg, '_blank');
+    window.open('https://line.me/R/msg/text/?text=' + encodeURIComponent(text), '_blank');
   }
 
   loadCart();
