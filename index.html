@@ -389,8 +389,8 @@
   <ul class="menu-nav">
     <li><a href="#shop" onclick="closeMenu()"><span class="menu-num">01</span> 商品 <span class="menu-en">Shop</span></a></li>
     <li><a href="#about" onclick="closeMenu()"><span class="menu-num">02</span> 關於我們 <span class="menu-en">About</span></a></li>
-    <li><a href="#booking" onclick="closeMenu()"><span class="menu-num">03</span> 預約體驗 <span class="menu-en">Booking</span></a></li>
-    <li><a href="#contact" onclick="closeMenu()"><span class="menu-num">04</span> 聯絡我們 <span class="menu-en">Contact</span></a></li>
+    <!-- <li><a href="#booking" onclick="closeMenu()"><span class="menu-num">03</span> 預約體驗 <span class="menu-en">Booking</span></a></li> -->
+    <li><a href="#contact" onclick="closeMenu()"><span class="menu-num">03</span> 聯絡我們 <span class="menu-en">Contact</span></a></li>
   </ul>
   <div class="menu-footer">
     <img src="logo.png" alt="minibini" class="menu-footer-logo">
@@ -462,7 +462,7 @@
     <ul class="page-nav-links">
       <li><a href="#shop">Shop</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#booking">Booking</a></li>
+      <!-- <li><a href="#booking">Booking</a></li> -->
       <li><a href="#contact">Contact</a></li>
       <li>
         <button class="cart-btn" onclick="openCart()" aria-label="購物車">
@@ -496,7 +496,7 @@
           <div class="sp-en-body">Not a comeback story.<br>A quiet rebuilding.</div>
         </div>
         <div class="sp-right">
-          <div class="sp-zh">歸零之後，<br>我選擇用氣味，重新練習呼吸。</div>
+          <div class="sp-zh">歸零之後，我選擇用氣味，重新練習呼吸。</div>
         </div>
       </div>
       <div class="story-panel" id="sp2">
@@ -516,7 +516,7 @@
           <div class="sp-en-body">@thosewordstoheart</div>
         </div>
         <div class="sp-right">
-          <div class="sp-zh">跟著我，<br>看一個品牌從零長出來。</div>
+          <div class="sp-zh">跟著我，看一個品牌從零長出來。</div>
         </div>
       </div>
       <div class="story-progress">
@@ -663,7 +663,7 @@
     </div>
   </section>
 
-  <!-- BOOKING -->
+  <!-- BOOKING (暫時隱藏，之後要恢復只要把下面這段的 <!-- 和 --> 拿掉即可)
   <section id="booking">
     <div class="reveal" style="text-align:center;">
       <div class="section-label">Experience · 體驗預約</div>
@@ -689,6 +689,8 @@
       <button class="btn-primary" style="width:100%;display:flex;justify-content:center;">送出預約 Submit</button>
     </div>
   </section>
+  -->
+
 
   <!-- CONTACT -->
   <section id="contact" style="padding-top:0;">
@@ -926,7 +928,7 @@
     text += `\n小計：NT$${getSubtotal().toLocaleString()}\n\n`;
     text += '💳 中國信託(822) 陳詠琦\n';
     text += '565600003780\n\n';
-    text += '⚠️ 完成轉帳後請附上截圖或打上匯款帳號後5碼，我們在確認收款後將即刻安排出貨，謝謝您🌼！';
+    text += '⚠️ 完成轉帳後請附上截圖，確認收款後即安排出貨，謝謝！';
     // 直接開啟 minibini 官方 LINE 帳號並帶入訂單訊息
     window.open('https://line.me/R/oaMessage/@347fazjv/?' + encodeURIComponent(text), '_blank');
   }
