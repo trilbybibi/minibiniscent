@@ -700,7 +700,7 @@
         <div class="contact-links">
           <a href="#" class="contact-link"><div class="contact-link-icon">@</div>hello@minibiniscent.com</a>
           <a href="#" class="contact-link"><div class="contact-link-icon" style="font-size:0.7rem;">IG</div>@thosewordstoheart</a>
-          <a href="#" class="contact-link"><div class="contact-link-icon" style="font-size:0.65rem;">LINE</div>@你的LINE ID</a>
+          <a href="https://line.me/R/ti/p/@347fazjv" class="contact-link" target="_blank"><div class="contact-link-icon" style="font-size:0.65rem;">LINE</div>@347fazjv</a>
           <a href="#" class="contact-link"><div class="contact-link-icon">📍</div>Tainan, Taiwan</a>
         </div>
       </div>
@@ -924,16 +924,11 @@
       text += `・${item.name} ×${item.qty}　NT$${item.price * item.qty}\n`;
     });
     text += `\n小計：NT$${getSubtotal().toLocaleString()}\n\n`;
-    text += '━━━━━━━━━━━━\n';
-    text += '💳 付款方式\n';
-    text += '🏦 中國信託 (822)\n';
-    text += '　戶名：陳詠琦\n';
-    text += '　帳號：565600003780\n';
-    text += '💚 LINE Pay：即將開通\n';
-    text += '━━━━━━━━━━━━\n\n';
-    text += '⚠️ 請完成轉帳後，回傳這則訊息並附上轉帳截圖，我們確認收款後即安排出貨，謝謝！';
-    // 開啟 LINE 傳送預先填好的訂單內容
-    window.open('https://line.me/R/msg/text/?text=' + encodeURIComponent(text), '_blank');
+    text += '💳 中國信託(822) 陳詠琦\n';
+    text += '565600003780\n\n';
+    text += '⚠️ 完成轉帳後請附上截圖，確認收款後即安排出貨，謝謝！';
+    // 直接開啟 minibini 官方 LINE 帳號並帶入訂單訊息
+    window.open('https://line.me/R/oaMessage/@347fazjv/?' + encodeURIComponent(text), '_blank');
   }
 
   loadCart();
